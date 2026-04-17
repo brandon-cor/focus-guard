@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- LaunchAgent plist — install to ~/Library/LaunchAgents/ -->
+    <!-- This keeps the macOS menu bar app running across reboots and after log in. -->
+    <key>Label</key>
+    <string>com.focusguard.app</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <!-- Update this path to wherever the built .app lives after export -->
+        <string>/Applications/FocusGuardMac.app/Contents/MacOS/FocusGuardMac</string>
+    </array>
+
+    <!-- start at login -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- restart if it crashes -->
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/focusguard.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/focusguard.err</string>
+</dict>
+</plist>
